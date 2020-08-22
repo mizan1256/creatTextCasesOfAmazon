@@ -19,14 +19,17 @@ public class TestAmazon extends Main {
     @Test
     public void testShoppingCart() throws InterruptedException {
         shoppingCart();
+        Assert.assertEquals("Amazon.com Shopping Cart",driver.getTitle());
     }
     @Test
     public void testamazonBasic() throws InterruptedException {
         amazonBasic();
+        Assert.assertEquals("Amazon.com: AmazonBasics: AmazonBasics",driver.getTitle());
     }
     @Test
     public void testSellButton() throws InterruptedException {
         sellButton();
+        Assert.assertEquals("Amazon.com: Sell Products Online with Selling on Amazon.",driver.getTitle());
     }
     @Test
     public void testSetProductSearch() throws InterruptedException {
@@ -35,6 +38,7 @@ public class TestAmazon extends Main {
     @Test
     public void testsetSelectYourAddressd() throws InterruptedException {
         setSelectYourAddressd();
+        Assert.assertEquals("Amazon Sign-In",driver.getTitle());
     }
     @Test
     public void testamazonBurgerButtonIsDiplayed() {
@@ -58,7 +62,6 @@ public class TestAmazon extends Main {
     public void testEGiftCardClickable() {
         eGiftCardButtonIsClickAble();
     }
-
     @Test
     public void testBirthDayButtonClickable() throws InterruptedException {
         birthDayButtonIsActive();

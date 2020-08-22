@@ -3,6 +3,7 @@ package amazon.testCases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -28,17 +29,26 @@ public class Main {
         driver.get(url);
     }
 
+//    @BeforeMethod
+//    public void setUp() {
+//        System.out.println("Welcom to Amazon testing page ");
+//        System.setProperty("webdriver.chrome.driver", "lib/browserDriver/chromedriver");
+//        driver = new ChromeDriver();
+//        driver.navigate().to("https://www.amazon.com/");
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    }
     @BeforeMethod
-    public void setUp() {
+    public void setUpFireFox() {
         System.out.println("Welcom to Amazon testing page ");
-        System.setProperty("webdriver.chrome.driver", "lib/browserDriver/chromedriver");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.geckodriver.driver", "lib/browserDriver/geckodriver");
+        driver = new FirefoxDriver();
         driver.navigate().to("https://www.amazon.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-
     @AfterMethod
     public void closeBrowser() {
         driver.close();
